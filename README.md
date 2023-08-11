@@ -63,9 +63,9 @@ If you have any questions or want to discuss the project, feel free to contact m
 
 ## Authors
 
-- [Gustavo Roos]
-- [Alberto Helbig]
-- [Giordano Rossa]
+- Gustavo Roos
+- Alberto Helbig
+- Giordano Rossa
 
 ## License
 
