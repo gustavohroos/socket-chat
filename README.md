@@ -59,7 +59,7 @@ Contributions are welcome! If you have any suggestions, bug reports, or would li
 - Submit a pull request
 
 ## Contact
-If you have any questions or want to discuss the project, feel free to contact me at [ghroos@inf.ufpel.edu.br].
+If you have any questions or want to discuss the project, feel free to contact me at [ghroos@inf.ufpel.edu.br](ghroos@inf.ufpel.edu.br).
 
 ## Authors
 
