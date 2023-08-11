@@ -2,6 +2,48 @@
 
 This is a simple chat server application written in Python. It allows multiple clients to connect and exchange messages in a chat room. The server supports various commands for users, including setting usernames, retrieving user information, and more.
 
+## Chat Message Protocol
+
+This chat defines a structured format for encoding and parsing chat messages in a binary format. This protocol is utilized to facilitate communication between clients and the chat server in a standardized manner, ensuring organized messages that can be easily interpreted by both sender and receiver.
+
+### Message Format
+
+The chat message consists of the following components:
+
+1. **Protocol Version (1 byte):**
+   - Indicates the version of the chat message protocol being used.
+   - A single byte specifying the protocol version number.
+
+2. **Message Type (4 bytes):**
+   - Identifies the purpose or category of the message.
+   - A 4-byte integer representing the message type code.
+   - Message types are predefined within the application to differentiate between different types of messages (e.g., chat messages, commands, notifications).
+
+3. **Username Length (4 bytes):**
+   - Indicates the length (in bytes) of the username being sent.
+   - A 4-byte integer specifying the length of the username data.
+
+4. **Message Length (4 bytes):**
+   - Indicates the length (in bytes) of the message content.
+   - A 4-byte integer specifying the length of the message data.
+
+5. **Username (up to 10 bytes):**
+   - The username is encoded as UTF-8 and is a variable-length field, with a maximum of 10 bytes.
+   - If the username is shorter than 10 bytes, it is padded with null bytes (0x00) to reach the fixed length.
+
+6. **Timestamp (4 bytes):**
+   - Represents the time at which the message was created.
+   - A 4-byte integer representing the timestamp value.
+   - The timestamp is stored as the number of seconds since the Unix epoch (January 1, 1970).
+
+7. **Message Content (variable length):**
+   - The actual content of the chat message.
+   - Encoded as UTF-8 and can vary in length based on the message being sent.
+
+### Usage
+
+This protocol ensures that messages are packed into a consistent binary structure, making it efficient for transmission over a network. The provided functions handle the creation and parsing of messages based on this protocol, ensuring that messages are clearly defined and can be reliably processed by the chat application.
+
 ## Features
 
 - **Chat messages**: Clients can send and receive chat messages in the chat room.
