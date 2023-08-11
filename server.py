@@ -26,9 +26,9 @@ def main():
         print("connected with {}".format(str(address)))
         clients.append(client)
 
-        message = create_chat_message("username", "server", 2)
+        # message = create_chat_message("username", "server", 2)
         
-        client.send(message)
+        # client.send(message)
 
         thread = threading.Thread(target=messages_handler, args=(client,))
         thread.start()

@@ -40,7 +40,7 @@ def receive_messages(server):
             if message["type"] == 2:
                 if message["content"] == "username":
                     response = create_chat_message(username, username, 2)
-                    server.send(f"USERNAME<>{username}".encode('utf-8'))
+                    # server.send(f"USERNAME<>{username}".encode('utf-8'))
                     continue
 
             print(message + '\n')
