@@ -103,8 +103,14 @@ def send_messages(server):
     while wait == True:
         while True:
             my_username = input("please enter your username: ")
+            if my_username.startswith("/"):
+                print("you cannot start your username with '/' ")
+                continue
             if len(my_username) > 10:
                 print("username too long!")
+                continue
+            if my_username == "server":
+                print("you cannot have that username!")
                 continue
             break
         message = create_chat_message(my_username, my_username, MessageTypes.SET_USERNAME_COMMAND)
@@ -160,11 +166,11 @@ def send_messages(server):
 
                 if message.startswith("/user"):
                     splited_message = message.split()
+                    if len(splited_message) < 2:
+                        print("use /user <username>!\n")
+                        continue
                     if splited_message[1] == "server":
                         print("you cannot get information about the server!\n")
-                        continue
-                    if len(splited_message) != 2:
-                        print("use /user <username>!\n")
                         continue
                     if len(splited_message[1]) > 10:
                         print("username too long!\n")
